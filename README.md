@@ -11,7 +11,7 @@
 
 ```bash
 kind get clusters
-kind delete cluster --name <name>
+kind delete cluster --name dev-cluster
 
 # Get cluster info and nodes
 kubectl cluster-info
@@ -19,4 +19,13 @@ kubectl get node
 
 # Exec into a node
 docker exec -it dev-cluster-control-plane bash # run `crictl images`
+```
+
+## Getting Started
+
+```bash
+kubectl apply -f ./pods/hello-world.yaml
+kubectl get pods
+kubectl logs hello-world-app-5664469676-x4wtd # this name changes based on the output of the above command
+kubectl delete -f ./pods/hello-world.yaml
 ```
