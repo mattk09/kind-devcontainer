@@ -10,22 +10,29 @@
             "VARIANT": "focal"
         }
     },
-    // Set *default* container specific settings.json values on container create.
-    "settings": {
-        "terminal.integrated.shell.linux": "/bin/bash"
-    },
-    // Add the IDs of extensions you want installed when the container is created.
-    "extensions": [],
-    // Use 'forwardPorts' to make a list of ports inside the container available locally.
-    // "forwardPorts": [],
-    // Use 'postCreateCommand' to run commands after the container is created.
-    //"postCreateCommand": "",
-    // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"customizations": {
+		"vscode": {
+			"settings": {
+			},
+			"extensions": [
+				"ms-kubernetes-tools.vscode-kubernetes-tools",
+				"humao.rest-client"
+			]
+		}
+	},
     "remoteUser": "vscode",
     "features": {
-        "docker-in-docker": "latest",
-        "git": "latest",
-        "azure-cli": "latest",
-        "kubectl-helm-minikube": "latest"
-    }
+		"ghcr.io/devcontainers/features/docker-in-docker:1": {},
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {},
+		"ghcr.io/devcontainers/features/azure-cli:1": {}
+    },
+    "postCreateCommand": ".devcontainer/post-create.sh",
+	"overrideCommand": true,
+	"mounts": [
+		{
+			"source": "dind-var-lib-docker-kind-container",
+			"target": "/var/lib/docker",
+			"type": "volume"
+		}
+	]
 }
