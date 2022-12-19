@@ -22,3 +22,7 @@ spec:
       containers:
       - image: hello-world
         name: hello
+        resources:
+          limits:
+            memory: 128Mi
+            cpu: 500m
