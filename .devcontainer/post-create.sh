@@ -14,5 +14,5 @@ else
     kind delete cluster --name dev-cluster
 fi
 
-kind create cluster --config ./cluster-config.yaml --wait 5m --name dev-cluster
+kind create cluster --config ./cluster-config.yml --wait 5m --name dev-cluster
 
