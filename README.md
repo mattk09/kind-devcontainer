@@ -24,8 +24,8 @@ docker exec -it dev-cluster-control-plane bash # run `crictl images`
 ## Getting Started
 
 ```bash
-kubectl apply -f ./pods/hello-world.yaml
+kubectl apply -f ./pods/hello-world.yml
 kubectl get pods
 kubectl logs hello-world-app-5664469676-x4wtd # this name changes based on the output of the above command
-kubectl delete -f ./pods/hello-world.yaml
+kubectl delete -f ./pods/hello-world.yml
 ```
