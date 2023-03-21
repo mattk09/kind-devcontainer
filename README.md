@@ -5,7 +5,7 @@
 ## Basic steps
 
 - Create a cluster and wait for control plane to be created (already done in post-create.sh)
-  - `kind create cluster --config ./cluster-config.yaml --wait 5m --name dev-cluster`
+  - `kind create cluster --config ./cluster-config.yml --wait 5m --name dev-cluster`
 
 ## Other commands
 
